@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+    vpn:
+        container_name: ${CONTAINER_NAME-V2RAY}
+        build:
+            context: ./
+        ports:
+           - "${PORT-8001}:8001"
+        tty: true
+        restart: always
+        volumes:
+            -   "./:/home"
